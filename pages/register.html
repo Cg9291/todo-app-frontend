@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="masthead">
+        <span class="eyebrow">Todo API demo</span>
+        <h1 class="headline">Create an account and start testing the flow.</h1>
+        <p class="subhead">The page keeps the UI small on purpose. The main goal is to exercise the server you already built through a browser.</p>
+      </section>
+      <section class="auth-layout">
+        <article class="panel feature-card">
+          <h2 class="card-title">Built to show the backend working end to end.</h2>
+          <p class="card-copy">Registration runs against the live API and can later drop the user directly into the protected app view when backend auth is wired across repos.</p>
+          <div class="feature-list">
+            <div class="feature"><strong>Session-backed auth</strong><span>Frontend auth will later connect to the deployed backend cookie flow.</span></div>
+            <div class="feature"><strong>User-scoped tasks</strong><span>The UI is structured around the same task boundaries your API already enforces.</span></div>
+            <div class="feature"><strong>Thin client surface</strong><span>No framework overhead. Just enough browser code to exercise the API cleanly.</span></div>
+          </div>
+        </article>
+        <section class="panel form-card">
+          <h2 class="card-title">Register</h2>
+          <p class="card-copy">Create a user with the same validation rules enforced by the backend.</p>
+          <form id="register-form" class="form-grid">
+            <div class="split">
+              <label><span class="label-copy">First name</span><input type="text" name="firstname" autocomplete="given-name" required /></label>
+              <label><span class="label-copy">Last name</span><input type="text" name="lastname" autocomplete="family-name" required /></label>
+            </div>
+            <label><span class="label-copy">Email</span><input type="email" name="email" autocomplete="email" required /></label>
+            <label><span class="label-copy">Password</span><input type="password" name="password" autocomplete="new-password" required /></label>
+            <p id="register-status" class="status" aria-live="polite"></p>
+            <div class="actions"><button class="button button-primary" type="submit">Create account</button></div>
+          </form>
+          <p class="auth-footer">Already registered? <a href="/pages/login.html">Log in instead</a>.</p>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="/scripts/register.js"></script>
+  </body>
+</html>

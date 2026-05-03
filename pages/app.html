@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Todo app</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="app-header">
+        <div>
+          <span class="eyebrow">Task workspace</span>
+          <h1 class="app-heading">Work the API from a real browser surface.</h1>
+          <p class="app-subhead">This page stays intentionally close to the backend. Every task action below calls your existing JSON routes.</p>
+        </div>
+        <div class="meta" id="task-meta">Loading tasks...</div>
+      </header>
+      <section class="todo-layout">
+        <aside class="panel app-card">
+          <h2 class="card-title" id="editor-title">Create a task</h2>
+          <p class="card-copy" id="editor-copy">Use this form to add a task or switch into edit mode from the list on the right.</p>
+          <form id="task-form" class="form-grid">
+            <input type="hidden" name="taskId" />
+            <label><span class="label-copy">Title</span><input type="text" name="title" required /></label>
+            <label><span class="label-copy">Description</span><textarea name="description" required></textarea></label>
+            <p id="task-status" class="status" aria-live="polite"></p>
+            <div class="actions">
+              <button class="button button-primary" type="submit" id="task-submit">Save task</button>
+              <button class="button button-ghost" type="button" id="task-cancel" hidden>Cancel edit</button>
+              <a class="button button-ghost" href="/pages/login.html">Switch account</a>
+            </div>
+          </form>
+        </aside>
+        <section class="panel app-card">
+          <h2 class="card-title">Current tasks</h2>
+          <p class="card-copy">The list refreshes after each mutation so you can validate the persisted state immediately.</p>
+          <div id="task-list" class="task-list"></div>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="/scripts/app.js"></script>
+  </body>
+</html>

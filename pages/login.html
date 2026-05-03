@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log in</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="masthead">
+        <span class="eyebrow">Todo API demo</span>
+        <h1 class="headline">Get back to your task list.</h1>
+        <p class="subhead">This interface is intentionally thin. It exists to drive the API through a browser without changing the backend contract.</p>
+      </section>
+      <section class="auth-layout">
+        <article class="panel feature-card">
+          <h2 class="card-title">Built to show the backend working end to end.</h2>
+          <p class="card-copy">Use it to validate registration, login, cookie persistence, task CRUD, and error responses from the same service you deploy.</p>
+          <div class="feature-list">
+            <div class="feature"><strong>Session-backed auth</strong><span>Frontend auth will later connect to the deployed backend cookie flow.</span></div>
+            <div class="feature"><strong>User-scoped tasks</strong><span>The UI is structured around the same task boundaries your API already enforces.</span></div>
+            <div class="feature"><strong>Thin client surface</strong><span>No framework overhead. Just enough browser code to exercise the API cleanly.</span></div>
+          </div>
+        </article>
+        <section class="panel form-card">
+          <h2 class="card-title">Log in</h2>
+          <p class="card-copy">Use the account you already created. Successful login redirects straight into the task workspace.</p>
+          <form id="login-form" class="form-grid">
+            <label><span class="label-copy">Email</span><input type="email" name="email" autocomplete="email" required /></label>
+            <label><span class="label-copy">Password</span><input type="password" name="password" autocomplete="current-password" required /></label>
+            <p id="login-status" class="status" aria-live="polite"></p>
+            <div class="actions"><button class="button button-primary" type="submit">Log in</button></div>
+          </form>
+          <p class="auth-footer">Need an account? <a href="/pages/register.html">Create one here</a>.</p>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="/scripts/login.js"></script>
+  </body>
+</html>
