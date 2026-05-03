@@ -1,7 +1,11 @@
-import { API_BASE_URL } from './config.js';
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+
+if (!apiBaseUrl) {
+  throw new Error('VITE_API_BASE_URL is not defined.');
+}
 
 export function getApiUrl(pathname) {
-  return `${API_BASE_URL}${pathname}`;
+  return `${apiBaseUrl}${pathname}`;
 }
 
 export async function parseJson(response) {
